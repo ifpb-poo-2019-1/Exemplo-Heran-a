@@ -19,13 +19,4 @@ public class Tecnico extends Funcionario {
         this.setor = setor;
     }
 
-    @Override
-    public void imprimirInfo(){
-        System.out.println("CPF: "+getCpf());
-        System.out.println("Nome: "+getNome());
-        System.out.println("Nascimento: "+getNascimento());
-        System.out.println("Salário: "+getSalario());
-        System.out.println("Setor: "+setor);
-    }
-
 }

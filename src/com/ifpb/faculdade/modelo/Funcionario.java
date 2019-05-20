@@ -1,6 +1,7 @@
 package com.ifpb.faculdade.modelo;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 public abstract class Funcionario {
 
@@ -48,6 +49,25 @@ public abstract class Funcionario {
         this.salario = salario;
     }
 
-    public abstract void imprimirInfo();
+    @Override
+    public String toString(){
+        return "Professor{cpf="+cpf+", nome="+nome+", nascimento="
+                +nascimento+", salario="+salario+'}';
+    }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Funcionario that = (Funcionario) o;
+        return Float.compare(that.salario, salario) == 0 &&
+                Objects.equals(cpf, that.cpf) &&
+                Objects.equals(nome, that.nome) &&
+                Objects.equals(nascimento, that.nascimento);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(cpf, nome, nascimento, salario);
+    }
 }

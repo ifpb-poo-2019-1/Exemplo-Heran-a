@@ -10,16 +10,16 @@ public class App {
 
     public static void main(String[] args) {
 
-        Professor professor = new Professor("111.111.111-01",
+        Funcionario funcionario = new Professor("111.111.111-01",
                 "João", LocalDate.now(), 2000,
                 "Mestrado");
 
-        Tecnico tecnico = new Tecnico("222.222.222-02",
-                "Maria", LocalDate.now(), 2000,
-                "Almoxarifado");
+        Funcionario funcionario1 = new Professor("111.111.111-01",
+                "João", LocalDate.now(), 2000,
+                "Mestrado");
 
-        professor.imprimirInfo();
-        tecnico.imprimirInfo();
+        System.out.println(funcionario == funcionario1);
+        System.out.println(funcionario.equals(funcionario1));
 
     }
 

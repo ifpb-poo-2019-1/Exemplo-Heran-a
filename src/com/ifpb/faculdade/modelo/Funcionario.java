@@ -47,4 +47,7 @@ public abstract class Funcionario {
     public void setSalario(float salario) {
         this.salario = salario;
     }
+
+    public abstract void imprimirInfo();
+
 }

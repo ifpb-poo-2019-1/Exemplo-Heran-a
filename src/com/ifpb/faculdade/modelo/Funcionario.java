@@ -50,9 +50,13 @@ public abstract class Funcionario {
     }
 
     @Override
-    public String toString(){
-        return "Professor{cpf="+cpf+", nome="+nome+", nascimento="
-                +nascimento+", salario="+salario+'}';
+    public String toString() {
+        return "Funcionario{" +
+                "cpf='" + cpf + '\'' +
+                ", nome='" + nome + '\'' +
+                ", nascimento=" + nascimento +
+                ", salario=" + salario +
+                '}';
     }
 
     @Override
@@ -70,4 +74,5 @@ public abstract class Funcionario {
     public int hashCode() {
         return Objects.hash(cpf, nome, nascimento, salario);
     }
+
 }

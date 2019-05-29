@@ -14,6 +14,14 @@ public class Faculdade {
         quantidade = 0;
     }
 
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
     public boolean adicionarFuncionario(Funcionario funcionario){
         if(quantidade < funcionarios.length){
             funcionarios[quantidade++] = funcionario;
@@ -34,6 +42,30 @@ public class Faculdade {
             if(funcionarios[i].getClass()==Professor.class) cont++;
         }
         return cont;
+    }
+
+    public boolean deletarFuncionario(Funcionario funcionario){
+        for(int i=0; i<quantidade;i++){
+            //deslocar todos os elementos uma posição à esquerda
+            if(funcionarios[i].equals(funcionario)){
+                for(int j=i;j<quantidade-1;j++){
+                    funcionarios[j] = funcionarios[j+1];
+                }
+                quantidade--;
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean atualizarFuncionario(Funcionario funcionario){
+        for(int i=0;i<quantidade;i++){
+            if(funcionarios[i].getCpf().equals(funcionario.getCpf())){
+                funcionarios[i] = funcionario;
+                return true;
+            }
+        }
+        return false;
     }
 
 }

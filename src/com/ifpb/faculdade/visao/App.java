@@ -1,9 +1,6 @@
 package com.ifpb.faculdade.visao;
 
-import com.ifpb.faculdade.modelo.Faculdade;
-import com.ifpb.faculdade.modelo.Professor;
-import com.ifpb.faculdade.modelo.Tecnico;
-import com.ifpb.faculdade.modelo.Terceirizado;
+import com.ifpb.faculdade.modelo.*;
 
 import java.time.LocalDate;
 import java.util.Arrays;
@@ -14,9 +11,12 @@ public class App {
 
         Faculdade faculdade = new Faculdade("IFPB");
 
-        faculdade.adicionarFuncionario(new Professor("111.111.111-01",
+        Funcionario funcionario = new Professor("111.111.111-01",
                 "João", LocalDate.now(), 2000,
-                "Mestrado"));
+                "Mestrado");
+
+        faculdade.adicionarFuncionario(funcionario);
+
         faculdade.adicionarFuncionario(new Terceirizado("222.222.222-02",
                 "Maria", LocalDate.now(), 2000,
                 "Limpeza"));
@@ -24,9 +24,11 @@ public class App {
                 "Pedro", LocalDate.now(), 2000,
                 "Coordenação de cursos"));
 
-        System.out.println(Arrays.toString(faculdade.listarFuncionarios()));
+        funcionario.setNome("João Paulo");
 
-        System.out.println("Quantidade de professores: "+faculdade.contProfessores());
+        faculdade.atualizarFuncionario(funcionario);
+
+        System.out.println(Arrays.toString(faculdade.listarFuncionarios()));
 
     }
 
